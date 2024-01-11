@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Input, Button, Typography } from "@material-tailwind/react";
+import { Button, Typography, Input } from "../../_shared/mods";
 
 function Hero() {
   return (
@@ -27,10 +27,10 @@ function Hero() {
             condições desafiadoras enfrentadas pelos profissionais da educação
             no país. Essa transição me levou ao desenvolvimento de software,
             onde acumulei experiência em Angular, React, Node.js, C#, Ionic,
-            Moodle, MongoDB, SQL Server, Azure e AWS. Atualmente, estudo
-            Go, e estou empenhado em buscar desafios e aprimorar minhas
-            habilidades para contribuir com projetos inovadores no
-            desenvolvimento de software.
+            Moodle, MongoDB, SQL Server, Azure e AWS. Atualmente, estudo Go, e
+            estou empenhado em buscar desafios e aprimorar minhas habilidades
+            para contribuir com projetos inovadores no desenvolvimento de
+            software.
           </Typography>
           <div className="grid">
             <Typography

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Typography } from "@material-tailwind/react";
+import { Typography } from "../../_shared/mods";
 
 const CLIENTS = [
   "AR3Capital",

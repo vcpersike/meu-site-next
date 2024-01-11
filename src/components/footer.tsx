@@ -1,4 +1,4 @@
-import { Typography, Button } from "@material-tailwind/react";
+import { Typography } from "../../_shared/mods";
 
 const LINKS = [{
   link: "Início",

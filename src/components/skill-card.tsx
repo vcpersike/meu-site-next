@@ -1,4 +1,4 @@
-import { Card, CardBody, Typography } from "@material-tailwind/react";
+import { Card, CardBody, Typography } from "../../_shared/mods";
 
 interface SkillCardProps {
   title: string;

@@ -1,4 +1,4 @@
-import { Card, Typography } from "@material-tailwind/react";
+import { Card, Typography } from "../../_shared/mods";
 
 interface ResumeItemProps {
   icon: React.ElementType;

@@ -1,16 +1,16 @@
 "use client";
 
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import {
-  Typography,
   Card,
   CardBody,
+  Typography,
   Radio,
   Input,
-  Textarea,
   Button,
+  Textarea,
   IconButton,
-} from "@material-tailwind/react";
-import { EnvelopeIcon, PhoneIcon, TicketIcon } from "@heroicons/react/24/solid";
+} from "../../_shared/mods";
 
 export function ContactForm() {
   return (
@@ -23,8 +23,9 @@ export function ContactForm() {
           variant="lead"
           className="mx-auto w-full lg:w-5/12 !text-gray-500"
         >
-          Pronto para começar ? Sinta-se à vontade para entrar em contato através do formulário abaixo,
-          e vamos embarcar em uma jornada de inovação e sucesso.
+          Pronto para começar ? Sinta-se à vontade para entrar em contato
+          através do formulário abaixo, e vamos embarcar em uma jornada de
+          inovação e sucesso.
         </Typography>
       </div>
       <div>
@@ -38,8 +39,8 @@ export function ContactForm() {
                 variant="lead"
                 className="mx-auto mb-8 text-base !text-gray-500"
               >
-                Preencha o formulário e nossa equipe entrará em contato com você em até 24 horas
-                horas.
+                Preencha o formulário e nossa equipe entrará em contato com você
+                em até 24 horas horas.
               </Typography>
               <div className="flex gap-5">
                 <PhoneIcon className="h-6 w-6 text-white" />

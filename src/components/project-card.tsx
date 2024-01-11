@@ -1,11 +1,6 @@
 import Image from "next/image";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
+import { Button, Card, CardBody, CardHeader, Typography } from "../../_shared/mods";
+
 
 interface ProjectCardProps {
   img: string;

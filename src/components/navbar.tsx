@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Navbar as MTNavbar,
-  IconButton,
-  Typography,
-  Collapse,
-  Button,
-} from "@material-tailwind/react";
+import { Navbar as MTNavbar, Typography, IconButton, Collapse } from "../../_shared/mods";
 import {
   XMarkIcon,
   Bars3Icon,

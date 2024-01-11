@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@material-tailwind/react";
 import {
   RectangleGroupIcon,
   FingerPrintIcon,
@@ -10,6 +9,7 @@ import {
   DocumentTextIcon,
 } from "@heroicons/react/24/solid";
 import { SkillCard } from "@/components";
+import { Typography } from "../../_shared/mods";
 
 const SKILLS = [
   {

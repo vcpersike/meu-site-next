@@ -1,7 +1,7 @@
 "use client";
 
 import { ProjectCard } from "@/components";
-import { Typography } from "@material-tailwind/react";
+import { Typography } from "../../_shared/mods";
 
 const PROJECTS = [
   {

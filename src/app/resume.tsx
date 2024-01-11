@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography, Button } from "@material-tailwind/react";
 import {
   ChartBarIcon,
   PuzzlePieceIcon,
@@ -9,6 +8,7 @@ import {
   CloudIcon,
 } from "@heroicons/react/24/solid";
 import { ResumeItem } from "@/components";
+import { Button, Typography } from "../../_shared/mods";
 
 const RESUME_ITEMS = [
   {
