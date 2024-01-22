@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar as MTNavbar,
   Typography,
@@ -116,8 +116,15 @@ const ModalApresentation = ({
   showModal: boolean;
   setShowModal: (show: boolean) => void;
 }) => {
-  const documentHtml = document.getElementById("modal")!
-  if(!documentHtml) return null
+  const [modalContainer, setModalContainer] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const element = document.getElementById("modal");
+    setModalContainer(element);
+  }, []);
+
+  if (!modalContainer) return null;
+
   return createPortal(
     <Modal show={showModal} onClose={() => setShowModal(false)}>
       <iframe
@@ -130,7 +137,7 @@ const ModalApresentation = ({
         allowFullScreen
       ></iframe>
     </Modal>,
-    documentHtml
+    modalContainer
   );
 };
 
