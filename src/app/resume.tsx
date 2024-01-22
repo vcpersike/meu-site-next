@@ -44,17 +44,6 @@ export function Resume() {
             comprometido em oferecer soluções de alta qualidade e adoto uma
             abordagem dinâmica para projetos web.
           </Typography>
-          <Button
-            variant="text"
-            color="gray"
-            className="flex items-center gap-2"
-          >
-            Veja mais
-            <ArrowRightIcon
-              strokeWidth={3}
-              className="h-3.5 w-3.5 text-gray-900"
-            />
-          </Button>
         </div>
         <div className="col-span-1 grid gap-y-6 lg:ml-auto pr-0 lg:pr-12 xl:pr-32">
           {RESUME_ITEMS.map((props, idx) => (

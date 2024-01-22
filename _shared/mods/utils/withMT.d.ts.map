@@ -1,1 +1,10 @@
-{"version":3,"file":"withMT.d.ts","sourceRoot":"","sources":["../../src/utils/withMT.js"],"names":[],"mappings":";AAyBA;;;;GAIG;AACH,wCAHW,MAAM,GACL,MAAM,CAcjB"}
+{
+  "version": 3,
+  "file": "withMT.d.ts",
+  "sourceRoot": "",
+  "sources": [
+    "../../src/utils/withMT.js"
+  ],
+  "names": [],
+  "mappings": ";AAyBA;;;;GAIG;AACH,wCAHW,MAAM,GACL,MAAM,CAcjB"
+}

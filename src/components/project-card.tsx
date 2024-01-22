@@ -32,9 +32,7 @@ export function ProjectCard({ img, title, desc }: ProjectCardProps) {
         <Typography className="mb-6 font-normal !text-gray-500">
           {desc}
         </Typography>
-        <Button color="gray" size="sm">
-          ver detalhes
-        </Button>
+
       </CardBody>
     </Card>
   );

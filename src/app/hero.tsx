@@ -47,12 +47,6 @@ function Hero() {
               </Button>
             </div>
           </div>
-          <Typography variant="small" className="font-normal !text-gray-500">
-            Veja como{" "}
-            <a href="#" className="font-medium underline transition-colors">
-              Receber meu currículo por e-mail
-            </a>
-          </Typography>
         </div>
         <Image
           width={1024}
