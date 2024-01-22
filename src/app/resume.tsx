@@ -4,7 +4,6 @@ import {
   ChartBarIcon,
   PuzzlePieceIcon,
   CursorArrowRaysIcon,
-  ArrowRightIcon,
   CloudIcon,
 } from "@heroicons/react/24/solid";
 import { ResumeItem } from "@/components";

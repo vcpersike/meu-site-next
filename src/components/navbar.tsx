@@ -1,17 +1,24 @@
-import React from "react";
-import { Navbar as MTNavbar, Typography, IconButton, Collapse } from "../../_shared/mods";
+import React, { useState } from "react";
+import {
+  Navbar as MTNavbar,
+  Typography,
+  IconButton,
+  Collapse,
+} from "../../_shared/mods";
 import {
   XMarkIcon,
   Bars3Icon,
   DocumentTextIcon,
   VideoCameraIcon,
 } from "@heroicons/react/24/solid";
-
+import Modal from "./modal";
+import { createPortal } from "react-dom";
 
 const NAV_MENU = [
   {
     name: "Apresentação",
     icon: VideoCameraIcon,
+    type: "modal",
   },
   {
     name: "Currículo em PDF",
@@ -22,11 +29,12 @@ const NAV_MENU = [
 interface NavItemProps {
   children: React.ReactNode;
   href?: string;
+  onClick?: () => void;
 }
 
-function NavItem({ children, href }: NavItemProps) {
+function NavItem({ children, href, onClick }: NavItemProps) {
   return (
-    <li>
+    <li onClick={onClick}>
       <Typography
         as="a"
         href={href || "#"}
@@ -42,6 +50,7 @@ function NavItem({ children, href }: NavItemProps) {
 }
 
 export function Navbar() {
+  const [showModal, setShowModal] = useState(false);
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => setOpen((cur) => !cur);
@@ -60,8 +69,11 @@ export function Navbar() {
           Minha Apresentação
         </Typography>
         <ul className="ml-10 hidden items-center gap-8 lg:flex">
-          {NAV_MENU.map(({ name, icon: Icon }) => (
-            <NavItem key={name}>
+          {NAV_MENU.map(({ name, icon: Icon, type }) => (
+            <NavItem
+              key={name}
+              onClick={type === "modal" ? () => setShowModal(true) : undefined}
+            >
               <Icon className="h-5 w-5" />
               {name}
             </NavItem>
@@ -92,8 +104,34 @@ export function Navbar() {
           </ul>
         </div>
       </Collapse>
+      <ModalApresentation showModal={showModal} setShowModal={setShowModal} />
     </MTNavbar>
   );
 }
+
+const ModalApresentation = ({
+  showModal,
+  setShowModal,
+}: {
+  showModal: boolean;
+  setShowModal: (show: boolean) => void;
+}) => {
+  const documentHtml = document.getElementById("modal")!
+  if(!documentHtml) return null
+  return createPortal(
+    <Modal show={showModal} onClose={() => setShowModal(false)}>
+      <iframe
+        width="560"
+        height="315"
+        src="https://youtube.com/live/iov3KMSvtN4"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </Modal>,
+    documentHtml
+  );
+};
 
 export default Navbar;

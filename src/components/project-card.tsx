@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button, Card, CardBody, CardHeader, Typography } from "../../_shared/mods";
+import { Card, CardBody, CardHeader, Typography } from "../../_shared/mods";
 
 
 interface ProjectCardProps {
