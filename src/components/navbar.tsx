@@ -23,6 +23,7 @@ const NAV_MENU = [
   {
     name: "Currículo em PDF",
     icon: DocumentTextIcon,
+    href: "https://persike-bucket.s3.sa-east-1.amazonaws.com/documentos/Currículo_Persike.pdf",
   },
 ];
 
@@ -33,12 +34,14 @@ interface NavItemProps {
 }
 
 function NavItem({ children, href, onClick }: NavItemProps) {
+  console.log(href);
   return (
     <li onClick={onClick}>
       <Typography
         as="a"
         href={href || "#"}
         target={href ? "_blank" : "_self"}
+        rel={href ? "noopener noreferrer" : undefined}
         variant="paragraph"
         color="gray"
         className="flex items-center gap-2 font-medium text-gray-900"
@@ -69,9 +72,10 @@ export function Navbar() {
           Minha Apresentação
         </Typography>
         <ul className="ml-10 hidden items-center gap-8 lg:flex">
-          {NAV_MENU.map(({ name, icon: Icon, type }) => (
+          {NAV_MENU.map(({ name, icon: Icon, type, href }) => (
             <NavItem
               key={name}
+              href={href}
               onClick={type === "modal" ? () => setShowModal(true) : undefined}
             >
               <Icon className="h-5 w-5" />
@@ -95,8 +99,12 @@ export function Navbar() {
       <Collapse open={open}>
         <div className="container mx-auto mt-3 border-t border-gray-200 px-2 pt-4">
           <ul className="flex flex-col gap-4">
-            {NAV_MENU.map(({ name, icon: Icon }) => (
-              <NavItem key={name}>
+          {NAV_MENU.map(({ name, icon: Icon, type, href }) => (
+            <NavItem
+              key={name}
+              href={href}
+              onClick={type === "modal" ? () => setShowModal(true) : undefined}
+            >
                 <Icon className="h-5 w-5" />
                 {name}
               </NavItem>
@@ -116,7 +124,9 @@ const ModalApresentation = ({
   showModal: boolean;
   setShowModal: (show: boolean) => void;
 }) => {
-  const [modalContainer, setModalContainer] = useState<HTMLElement | null>(null);
+  const [modalContainer, setModalContainer] = useState<HTMLElement | null>(
+    null
+  );
 
   useEffect(() => {
     const element = document.getElementById("modal");
@@ -130,8 +140,8 @@ const ModalApresentation = ({
       <iframe
         width="560"
         height="315"
-        src="https://youtube.com/live/iov3KMSvtN4"
-        title="YouTube video player"
+        src="https://www.youtube.com/embed/iov3KMSvtN4"
+        title="Apresentação"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -140,5 +150,4 @@ const ModalApresentation = ({
     modalContainer
   );
 };
-
 export default Navbar;
